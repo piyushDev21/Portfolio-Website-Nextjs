@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useRef } from "react";
 import {
   motion,
   useAnimationFrame,
@@ -7,10 +7,20 @@ import {
   useMotionValue,
   useTransform,
 } from "framer-motion";
-import { useRef } from "react";
 import { cn } from "@/lib/utils";
 
-export function Button({
+interface ButtonProps {
+  borderRadius?: string;
+  children: React.ReactNode;
+  as?: keyof JSX.IntrinsicElements | React.ComponentType<any>;
+  containerClassName?: string;
+  borderClassName?: string;
+  duration?: number;
+  className?: string;
+  [key: string]: any;
+}
+
+export const Button: React.FC<ButtonProps> = ({
   borderRadius = "1.75rem",
   children,
   as: Component = "button",
@@ -19,20 +29,11 @@ export function Button({
   duration,
   className,
   ...otherProps
-}: {
-  borderRadius?: string;
-  children: React.ReactNode;
-  as?: any;
-  containerClassName?: string;
-  borderClassName?: string;
-  duration?: number;
-  className?: string;
-  [key: string]: any;
-}) {
+}) => {
   return (
     <Component
       className={cn(
-        "bg-transparent relative text-xl   p-[1px] overflow-hidden md:col-span-2",
+        "bg-transparent relative text-xl p-[1px] overflow-hidden md:col-span-2",
         containerClassName
       )}
       style={{
@@ -67,23 +68,25 @@ export function Button({
       </div>
     </Component>
   );
-}
+};
 
-export const MovingBorder = ({
-  children,
-  duration = 2000,
-  rx,
-  ry,
-  ...otherProps
-}: {
+interface MovingBorderProps {
   children: React.ReactNode;
   duration?: number;
   rx?: string;
   ry?: string;
   [key: string]: any;
+}
+
+export const MovingBorder: React.FC<MovingBorderProps> = ({
+  children,
+  duration = 2000,
+  rx,
+  ry,
+  ...otherProps
 }) => {
-  const pathRef = useRef<any>();
-  const progress = useMotionValue<number>(0);
+  const pathRef = useRef<SVGRectElement | null>(null);
+  const progress = useMotionValue(0);
 
   useAnimationFrame((time) => {
     const length = pathRef.current?.getTotalLength();
@@ -93,14 +96,8 @@ export const MovingBorder = ({
     }
   });
 
-  const x = useTransform(
-    progress,
-    (val) => pathRef.current?.getPointAtLength(val).x
-  );
-  const y = useTransform(
-    progress,
-    (val) => pathRef.current?.getPointAtLength(val).y
-  );
+  const x = useTransform(progress, (val) => pathRef.current?.getPointAtLength(val)?.x ?? 0);
+  const y = useTransform(progress, (val) => pathRef.current?.getPointAtLength(val)?.y ?? 0);
 
   const transform = useMotionTemplate`translateX(${x}px) translateY(${y}px) translateX(-50%) translateY(-50%)`;
 

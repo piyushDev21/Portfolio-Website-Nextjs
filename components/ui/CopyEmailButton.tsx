@@ -1,11 +1,19 @@
 import React, { useState } from "react";
 import { IoCopyOutline } from "react-icons/io5";
+import { ReactNode } from "react";
 
-const MagicButton = ({ title, icon, handleClick, otherClasses }) => {
+type MagicButtonProps = {
+  title: string;
+  icon?: ReactNode;
+  handleClick?: () => void;
+  otherClasses?: string;
+};
+
+const MagicButton = ({ title, icon, handleClick, otherClasses }: MagicButtonProps) => {
   return (
     <button
       onClick={handleClick}
-      className={`flex items-center gap-2 px-4 py-2 rounded-md transition-all ${otherClasses}`}
+      className={`flex items-center gap-2 px-4 py-2 rounded-md transition-all ${otherClasses || ""}`}
     >
       {icon}
       {title}
