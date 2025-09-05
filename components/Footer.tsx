@@ -10,12 +10,12 @@ const Footer = () => {
 
       <div className="flex flex-col items-center">
         <h1 className="heading lg:max-w-[45vw]">
-          Ready to take <span className="text-purple">your</span> digital
-          presence to the next level?
+        Let&apos;s get  <span className="text-purple">in touch</span>
         </h1>
         <p className="text-white-200 md:mt-10 my-5 text-center">
-          Reach out to me today and let&apos;s discuss how I can help you
-          achieve your goals.
+         Let&apos;s 01100011011011110110010001100101
+
+  
         </p>
 
         <div className="flex flex-col md:flex-row gap-4">
