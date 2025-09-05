@@ -1,7 +1,14 @@
-import React, { useState } from "react";
+import React, { useState, ReactNode } from "react";
 import { IoCopyOutline } from "react-icons/io5";
 
-const MagicButton = ({ title, icon, handleClick, otherClasses }) => {
+interface MagicButtonProps {
+  title: string;
+  icon?: ReactNode;
+  handleClick?: () => void;
+  otherClasses?: string;
+}
+
+const MagicButton: React.FC<MagicButtonProps> = ({ title, icon, handleClick, otherClasses }) => {
   return (
     <button
       onClick={handleClick}
@@ -13,7 +20,7 @@ const MagicButton = ({ title, icon, handleClick, otherClasses }) => {
   );
 };
 
-const CopyEmailButton = () => {
+const CopyEmailButton: React.FC = () => {
   const [copied, setCopied] = useState(false);
 
   const handleCopy = () => {

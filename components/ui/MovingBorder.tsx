@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useRef } from "react";
 import {
   motion,
   useAnimationFrame,
@@ -7,7 +7,6 @@ import {
   useMotionValue,
   useTransform,
 } from "framer-motion";
-import { useRef } from "react";
 import { cn } from "@/lib/utils";
 
 export function Button({
@@ -32,12 +31,10 @@ export function Button({
   return (
     <Component
       className={cn(
-        "bg-transparent relative text-xl   p-[1px] overflow-hidden md:col-span-2",
+        "bg-transparent relative text-xl p-[1px] overflow-hidden md:col-span-2",
         containerClassName
       )}
-      style={{
-        borderRadius: borderRadius,
-      }}
+      style={{ borderRadius }}
       {...otherProps}
     >
       <div
@@ -59,9 +56,7 @@ export function Button({
           "relative bg-slate-900/[0.8] border border-slate-800 backdrop-blur-xl text-white flex items-center justify-center w-full h-full text-sm antialiased",
           className
         )}
-        style={{
-          borderRadius: `calc(${borderRadius} * 0.96)`,
-        }}
+        style={{ borderRadius: `calc(${borderRadius} * 0.96)` }}
       >
         {children}
       </div>
@@ -82,8 +77,8 @@ export const MovingBorder = ({
   ry?: string;
   [key: string]: any;
 }) => {
-  const pathRef = useRef<any>();
-  const progress = useMotionValue<number>(0);
+  const pathRef = useRef<SVGRectElement | null>(null); // ✅ Fixed
+  const progress = useMotionValue(0);
 
   useAnimationFrame((time) => {
     const length = pathRef.current?.getTotalLength();
@@ -93,13 +88,11 @@ export const MovingBorder = ({
     }
   });
 
-  const x = useTransform(
-    progress,
-    (val) => pathRef.current?.getPointAtLength(val).x
+  const x = useTransform(progress, (val) =>
+    pathRef.current?.getPointAtLength(val).x ?? 0
   );
-  const y = useTransform(
-    progress,
-    (val) => pathRef.current?.getPointAtLength(val).y
+  const y = useTransform(progress, (val) =>
+    pathRef.current?.getPointAtLength(val).y ?? 0
   );
 
   const transform = useMotionTemplate`translateX(${x}px) translateY(${y}px) translateX(-50%) translateY(-50%)`;
