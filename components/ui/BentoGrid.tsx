@@ -1,7 +1,6 @@
 'use client'
 import { cn } from "@/lib/utils";
 import { BackgroundGradientAnimation } from "./GradientBg";
-import { GlobeDemo } from "./GridGlobe";
 import CopyEmailButton from "./CopyEmailButton";
 
 
@@ -46,8 +45,8 @@ export const BentoGridItem = ({
   titleClassName?: string;
   spareImg?: string;
 }) => {
-  const leftLists = ["ReactJS", "Express", "Typescript"];
-  const rightLists = ["VueJS", "NextJS", "GraphQL"];
+  const leftLists = ["ReactJS", "Java", "Springboot", "AI"];
+  const rightLists = ["Security", "Databases", "GraphQL"];
 
 
 
@@ -120,7 +119,6 @@ export const BentoGridItem = ({
           </div>
 
       
-        {id==2 && <GlobeDemo/>}
         {id === 3 && (
             <div className="flex gap-1 lg:gap-5 w-fit absolute -right-3 lg:-right-2">
               {/* tech stack lists */}

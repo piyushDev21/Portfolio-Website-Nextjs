@@ -21,16 +21,18 @@ const Hero = () => {
     <div className='flex justify-center relative my-20 z-10'>
         <div className='max-w-[89vw] md:max-w-2xl lg:max-w-[60vw] flex flex-col items-center justify-center'>
             <h2 className='uppercase tracking-widest text-xs text-centre text-blue-100 max-w-80'>
-                Hello portfolio
+                Hello WORLD
             </h2>
             <h2>
-                <TextGenerateEffect
-                className='text-centre text-[40px] md:text-5xl lg:text-6xl'
-                words='We did it world lets party'//enter teh words here
-             />
+
+<TextGenerateEffect
+    className='text-centre text-[32px] md:text-4xl lg:text-5xl' 
+    words='From the keyboard to the gym floor to the open road ...'
+/>
             </h2>
             <p>
-                Hi, I&apos;m Piyush, a Next.js Developer based on India.
+              
+                Hi, I&apos;m Piyush, a full stack Developer based on India.
             </p>
             <a href="#about" className="mt-4">
                 <MagicButton
