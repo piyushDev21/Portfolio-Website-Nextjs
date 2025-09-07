@@ -19,7 +19,7 @@ const Footer = () => {
         </p>
 
         <div className="flex flex-col md:flex-row gap-4">
-        <a href="/PiyushResume.pdf" download>
+        <a href="/PiyushResumeSep.pdf" download>
             <MagicButton
               title="Download Resume"
               icon={<FaDownload />}
