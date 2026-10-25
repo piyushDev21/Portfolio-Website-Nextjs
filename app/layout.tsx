@@ -14,8 +14,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "PiyushDev2108",
-  description: "Piyush's Portfolio",
+  title: "Piyush Kumar | Full Stack Developer",
+  description:
+    "Full stack developer at Airbus building safety-critical aviation software with React, TypeScript, Spring Boot, Django, Kafka and AWS. Based in Bengaluru, open to relocating across Europe.",
 };
 
 export default function RootLayout({

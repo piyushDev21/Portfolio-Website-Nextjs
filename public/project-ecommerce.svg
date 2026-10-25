@@ -1,0 +1,49 @@
+<svg width="464" height="300" viewBox="0 0 464 300" fill="none" xmlns="http://www.w3.org/2000/svg" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, sans-serif">
+  <rect x="0.5" y="0.5" width="463" height="299" rx="16" fill="#0E1126" stroke="#363749"/>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0L10 5L0 10z" fill="#8B8FB3"/>
+    </marker>
+  </defs>
+
+  <!-- client -->
+  <rect x="24" y="122" width="84" height="56" rx="10" fill="#161A31" stroke="#363749"/>
+  <text x="66" y="146" fill="#E4ECFF" font-size="13" font-weight="600" text-anchor="middle">Client</text>
+  <text x="66" y="164" fill="#8B8FB3" font-size="10" text-anchor="middle">REST + JWT</text>
+
+  <!-- order service -->
+  <rect x="148" y="112" width="128" height="76" rx="12" fill="#1B1F3B" stroke="#CBACF9"/>
+  <text x="212" y="140" fill="#FFFFFF" font-size="14" font-weight="700" text-anchor="middle">order-service</text>
+  <text x="212" y="158" fill="#BEC1DD" font-size="10" text-anchor="middle">prices + reserves</text>
+  <rect x="180" y="166" width="64" height="16" rx="8" fill="#2A2F5A"/>
+  <text x="212" y="178" fill="#CBACF9" font-size="9" font-weight="600" text-anchor="middle">PostgreSQL</text>
+
+  <!-- product service -->
+  <rect x="316" y="40" width="128" height="76" rx="12" fill="#1B1F3B" stroke="#4E5BA6"/>
+  <text x="380" y="68" fill="#FFFFFF" font-size="14" font-weight="700" text-anchor="middle">product-service</text>
+  <text x="380" y="86" fill="#BEC1DD" font-size="10" text-anchor="middle">catalogue</text>
+  <rect x="350" y="94" width="60" height="16" rx="8" fill="#16352A"/>
+  <text x="380" y="106" fill="#6FD195" font-size="9" font-weight="600" text-anchor="middle">MongoDB</text>
+
+  <!-- inventory service -->
+  <rect x="316" y="184" width="128" height="76" rx="12" fill="#1B1F3B" stroke="#4E5BA6"/>
+  <text x="380" y="212" fill="#FFFFFF" font-size="14" font-weight="700" text-anchor="middle">inventory-service</text>
+  <text x="380" y="230" fill="#BEC1DD" font-size="10" text-anchor="middle">stock reservations</text>
+  <rect x="348" y="238" width="64" height="16" rx="8" fill="#2A2F5A"/>
+  <text x="380" y="250" fill="#CBACF9" font-size="9" font-weight="600" text-anchor="middle">PostgreSQL</text>
+
+  <!-- arrows -->
+  <path d="M108 150H144" stroke="#8B8FB3" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <path d="M276 136C296 136 296 78 312 78" stroke="#8B8FB3" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <path d="M276 164C296 164 296 222 312 222" stroke="#8B8FB3" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- footer badges -->
+  <g font-size="10" font-weight="600">
+    <rect x="24" y="252" width="76" height="22" rx="11" fill="#161A31" stroke="#363749"/>
+    <text x="62" y="267" fill="#BEC1DD" text-anchor="middle">JWT auth</text>
+    <rect x="108" y="252" width="66" height="22" rx="11" fill="#161A31" stroke="#363749"/>
+    <text x="141" y="267" fill="#BEC1DD" text-anchor="middle">Docker</text>
+    <rect x="182" y="252" width="104" height="22" rx="11" fill="#161A31" stroke="#363749"/>
+    <text x="234" y="267" fill="#BEC1DD" text-anchor="middle">docker compose up</text>
+  </g>
+</svg>

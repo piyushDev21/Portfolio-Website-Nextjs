@@ -1,5 +1,6 @@
 import React, { useState, ReactNode } from "react";
 import { IoCopyOutline } from "react-icons/io5";
+import { contactEmail } from "@/data";
 
 interface MagicButtonProps {
   title: string;
@@ -24,7 +25,7 @@ const CopyEmailButton: React.FC = () => {
   const [copied, setCopied] = useState(false);
 
   const handleCopy = () => {
-    navigator.clipboard.writeText("your.email@example.com");
+    navigator.clipboard.writeText(contactEmail);
     setCopied(true);
     setTimeout(() => setCopied(false), 2000); // Reset after 2 seconds
   };

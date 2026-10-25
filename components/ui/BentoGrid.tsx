@@ -2,6 +2,7 @@
 import { cn } from "@/lib/utils";
 import { BackgroundGradientAnimation } from "./GradientBg";
 import CopyEmailButton from "./CopyEmailButton";
+import { techStack } from "@/data";
 
 
 
@@ -45,15 +46,8 @@ export const BentoGridItem = ({
   titleClassName?: string;
   spareImg?: string;
 }) => {
-  const leftLists = ["ReactJS", "Java", "Springboot", "AI"];
-  const rightLists = ["Security", "Databases", "GraphQL"];
-
-
-
-
-  function handleCopy(): void {
-    throw new Error("Function not implemented.");
-  }
+  const leftLists = techStack.left;
+  const rightLists = techStack.right;
 
   return (
     <div

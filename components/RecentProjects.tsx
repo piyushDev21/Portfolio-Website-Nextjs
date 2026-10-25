@@ -1,10 +1,9 @@
 "use client";
 
-import { FaLocationArrow } from "react-icons/fa6";
+import { FaGithub } from "react-icons/fa6";
 
 import { projects } from "@/data";
 import { PinContainer } from "./ui/3d-pin";
-import { title } from "process";
 
 
 const RecentProjects = () => {
@@ -21,19 +20,19 @@ const RecentProjects = () => {
             key={item.id}
           >
             <PinContainer
-              title={title}
-              href="https://github.com/piyushDev21"
+              title={item.link.replace("https://", "")}
+              href={item.link}
             >
               <div className="relative flex items-center justify-center sm:w-96 w-[80vw] overflow-hidden h-[20vh] lg:h-[30vh] mb-10">
                 <div
                   className="relative w-full h-full overflow-hidden lg:rounded-3xl"
                   style={{ backgroundColor: "#13162D" }}
                 >
-                  <img src="/bg.png" alt="bgimg" />
+                  <img src="/bg.png" alt="" />
                 </div>
                 <img
                   src={item.img}
-                  alt="cover"
+                  alt={`${item.title} preview`}
                   className="z-10 absolute bottom-0"
                 />
               </div>
@@ -62,16 +61,16 @@ const RecentProjects = () => {
                         transform: `translateX(-${5 * index + 2}px)`,
                       }}
                     >
-                      <img src={icon} alt="icon5" className="p-2" />
+                      <img src={icon} alt="" className="p-2" />
                     </div>
                   ))}
                 </div>
 
                 <div className="flex justify-center items-center">
                   <p className="flex lg:text-xl md:text-xs text-sm text-purple">
-                    Check Live Site
+                    View on GitHub
                   </p>
-                  <FaLocationArrow className="ms-3" color="#CBACF9" />
+                  <FaGithub className="ms-3" color="#CBACF9" />
                 </div>
               </div>
             </PinContainer>

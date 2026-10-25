@@ -8,10 +8,10 @@ const Experience = () => {
   return (
     <div className="py-20 w-full" id="experience">
       <h1 className="heading">
-        My <span className="text-purple">work experience</span>
+        Experience <span className="text-purple">&amp; recognition</span>
       </h1>
 
-      <div className="w-full mt-12 grid lg:grid-cols-4 grid-cols-1 gap-10">
+      <div className="w-full mt-12 grid lg:grid-cols-2 grid-cols-1 gap-10">
         {workExperience.map((card) => (
           <Button
             key={card.id}
@@ -33,14 +33,17 @@ const Experience = () => {
             <div className="flex lg:flex-row flex-col lg:items-center p-3 py-6 md:p-5 lg:p-10 gap-2">
               <img
                 src={card.thumbnail}
-                alt={card.thumbnail}
+                alt=""
                 className="lg:w-32 md:w-20 w-16"
               />
               <div className="lg:ms-5">
                 <h1 className="text-start text-xl md:text-2xl font-bold">
                   {card.title}
                 </h1>
-                <p className="text-start text-white-100 mt-3 font-semibold">
+                <p className="text-start text-purple mt-1 text-sm md:text-base font-semibold">
+                  {card.company} · {card.period}
+                </p>
+                <p className="text-start text-white-100 mt-3 text-sm md:text-base">
                   {card.desc}
                 </p>
               </div>
